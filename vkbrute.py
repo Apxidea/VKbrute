@@ -4,7 +4,7 @@ import colorama
 from colorama import Fore, Back, Style
 
 logo = (''' 
-Мы в телеграме: @Hurring124''')
+Мы в телеграме: @Apxideaa''')
 print(logo)
 
 def wordvvod():
